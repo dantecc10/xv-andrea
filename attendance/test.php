@@ -15,6 +15,7 @@
 
     <script src="assets/js/qr-camera.js"></script>
 
+    <button onclick="startScanner()">Iniciar Escáner</button>
     <a id="qr-link" href="">Enlace de invitado</a>
 </body>
 
