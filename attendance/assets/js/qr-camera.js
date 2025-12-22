@@ -14,8 +14,10 @@ function startScanner() {
             result.textContent = decodedText;
 
             // Si es un enlace, puedes redirigir
-            if (decodedText.startsWith("http")) {
-                window.location.href = decodedText;
+            if (decodedText.startsWith("http") && decodedText.startsWith("https://xv-andrea.castelancarpinteyro.com/guest.php")) {
+                //window.location.href = decodedText;
+                document.getElementById("qr-link").href = decodedText;
+                //document.getElementById("qr-link").click();
             }
 
             qrCodeScanner.stop();
