@@ -13,6 +13,7 @@ function startScanner() {
         },
         (decodedText) => {
             result.textContent = decodedText;
+            linkElement.textContent = decodedText;
 
             // Si es un enlace, puedes redirigir
             if (decodedText.startsWith("http") && decodedText.startsWith("https://xv-andrea.castelancarpinteyro.com/guest.php")) {
