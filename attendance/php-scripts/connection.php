@@ -12,7 +12,7 @@ if($_ENV['ENVIRONMENT'] === 'DEVELOPMENT'){
     ini_set('display_errors', 0);
 }
 
-$servername = $_ENV['DB_HOST'];
+$servername = "127.0.0.1"; // $_ENV['DB_HOST'];
 $username = $_ENV['DB_USER'];
 $password = $_ENV['DB_PASSWORD'];
 $dbname = $_ENV['DB_NAME'];
