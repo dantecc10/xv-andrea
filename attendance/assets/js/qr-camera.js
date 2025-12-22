@@ -1,6 +1,7 @@
 //Inicializo la cámara y el lector de QR
 const result = document.getElementById("result");
 const qrCodeScanner = new Html5Qrcode("reader");
+const linkElement = document.getElementById("qr-link");
 
 function startScanner() {
     qrCodeScanner.start({
@@ -16,7 +17,7 @@ function startScanner() {
             // Si es un enlace, puedes redirigir
             if (decodedText.startsWith("http") && decodedText.startsWith("https://xv-andrea.castelancarpinteyro.com/guest.php")) {
                 //window.location.href = decodedText;
-                document.getElementById("qr-link").href = decodedText;
+                linkElement.href = decodedText;
                 //document.getElementById("qr-link").click();
             }
 
