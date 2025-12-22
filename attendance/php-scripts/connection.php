@@ -1,7 +1,7 @@
 <?php
 // Importar variables de entorno desde el archivo .env
 require_once(__DIR__ . '/../../vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
 if($_ENV['ENVIRONMENT'] === 'DEVELOPMENT'){
