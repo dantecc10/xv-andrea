@@ -12,7 +12,7 @@ function startScanner() {
             qrbox: 250
         },
         (decodedText) => {
-            result.textContent = decodedText;
+            result.innerHTML = "<a href=\"" + decodedText + "\">" + decodedText + "</a>";
             linkElement.textContent = decodedText;
 
             // Si es un enlace, puedes redirigir
