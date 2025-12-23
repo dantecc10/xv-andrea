@@ -12,6 +12,10 @@
   margin-top: 1.5rem !important;
 }
 
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
 .me-2 {
   margin-right: .5rem !important;
 }
@@ -53,6 +57,10 @@
 
 .pt-3 {
   padding-top: 1rem !important;
+}
+
+.pt-5 {
+  padding-top: 3rem !important;
 }
 
 .pb-2 {
