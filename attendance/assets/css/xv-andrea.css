@@ -1,0 +1,61 @@
+.bg-secondary {
+  background-color: #d36c83 !important;
+}
+
+.bg-primary {
+  background-color: #f098ab !important;
+}
+
+nav a.nav-link {
+  /*color: #bd852a !important;*/
+  text-shadow: 1px 1px 2px gold;
+}
+
+.dancing-script-text {
+  font-family: "Dancing Script", cursive !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color: #bd852a !important;
+}
+
+h1.dancing-script-text {
+  color: #bd852a !important;
+  text-shadow: 1px 1px 2px white !important;
+}
+
+hr.star-light:after {
+  border-radius: 20px !important;
+  background-color: #bd852a;
+}
+
+.great-vibes-text {
+  font-family: "great-vibes", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1.great-vibes-text, h2.great-vibes-text {
+  color: #bd852a !important;
+  text-shadow: 1px 1px 2px white !important;
+}
+
+header.masthead h2, header.masthead .h2 {
+  font-size: 2.8em;
+}
+
+section#portfolio, section#contact {
+  background-color: #d36c83 !important;
+}
+
+nav#mainNav {
+  border-bottom: solid #bd852a;
+}
+
+.star-light {
+  border-color: #bd852a !important;
+}
+
