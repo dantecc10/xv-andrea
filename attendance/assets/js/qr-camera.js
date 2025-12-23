@@ -15,13 +15,7 @@ function startScanner() {
             result.innerHTML = "<a href=\"" + decodedText + "\">" + decodedText + "</a>";
             linkElement.textContent = decodedText;
 
-            // Si es un enlace, puedes redirigir
-            if (decodedText.startsWith("http") && decodedText.startsWith("https://xv-andrea.castelancarpinteyro.com/guest.php")) {
-                //window.location.href = decodedText;
-                linkElement.href = decodedText;
-                //document.getElementById("qr-link").click();
-            }
-
+            // Detiener el escáner después de una lectura exitosa
             qrCodeScanner.stop();
         },
         (errorMessage) => {
