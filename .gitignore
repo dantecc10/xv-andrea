@@ -2,5 +2,6 @@
 vendor/*
 attendance/assets/img/ordered-qrs/*.png
 attendance/assets/img/ordered-qrs/*.svg
+attendance/assets/img/session/
 attendance/assets/img/qrs/*.png
 attendance/assets/img/qrs/*.svg
