@@ -7,8 +7,8 @@
 }
 
 nav a.nav-link {
-  /*color: #bd852a !important;*/
-  text-shadow: 1px 1px 2px gold;
+  /*color: #c17b2f !important;*/
+  /*text-shadow: 1px 1px 2px gold;*/
 }
 
 .dancing-script-text {
@@ -19,17 +19,21 @@ nav a.nav-link {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #bd852a !important;
+  /*color: #c17b2f !important;*/
+  text-shadow: 1px 1px 2px gold;
+  color: white;
+  /*text-shadow: 2px 1px 2px rgba(252,181,75,0.91) !important;*/
 }
 
 h1.dancing-script-text {
-  color: #bd852a !important;
-  text-shadow: 1px 1px 2px white !important;
+  color: #c17b2f !important;
+  /*text-shadow: 1px 1px 2px white !important;*/
+  text-shadow: 2px 1px 34px rgba(252,181,75,0.91) !important;
 }
 
 hr.star-light:after {
   border-radius: 20px !important;
-  background-color: #bd852a;
+  background-color: #c17b2f;
 }
 
 .great-vibes-text {
@@ -39,23 +43,49 @@ hr.star-light:after {
 }
 
 h1.great-vibes-text, h2.great-vibes-text {
-  color: #bd852a !important;
-  text-shadow: 1px 1px 2px white !important;
+  color: #c17b2f !important;
+  /*text-shadow: 1px 1px 2px white !important;*/
+  text-shadow: 2px 1px 34px rgba(252,181,75,0.91) !important;
 }
 
 header.masthead h2, header.masthead .h2 {
   font-size: 2.8em;
 }
 
-section#portfolio, section#contact {
+section#portfolio, section#about {
   background-color: #d36c83 !important;
 }
 
 nav#mainNav {
-  border-bottom: solid #bd852a;
+  border-bottom: 5px solid #c17b2f;
 }
 
 .star-light {
-  border-color: #bd852a !important;
+  border-color: #c17b2f !important;
+}
+
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+  background: #c17b2f;
+  text-shadow: 2px 1px 34px rgba(252,181,75,0.91) !important;
+}
+
+.golden {
+  color: #c17b2f !important;
+}
+
+.golden-bg {
+  background-color: #c17b2f !important;
+}
+
+.standard-button {
+  border: 2px solid #f098ab !important;
+  background-color: #c17b2f !important;
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: bold;
+}
+
+#first-photo {
+  box-shadow: 2px 2px 35px #c17b2f !important;
+  border-radius: 130px;
 }
 

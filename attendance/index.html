@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/trd3iep.css">
+<script src="https://unpkg.com/html5-qrcode"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - XV Andrea</title>
     <meta name="description" content="Asistencia a los XV años de Andrea">
@@ -25,13 +26,13 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link px-0 px-lg-3 py-3 rounded" href="#portfolio">Escanear pases</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link px-0 px-lg-3 py-3 rounded" href="#contact">Contact</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link px-0 px-lg-3 py-3 rounded" href="#about">Acerca de</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded px-0 px-lg-3 py-3" href="#about">Acerca de</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <header class="text-center text-white bg-primary masthead">
-        <div class="container"><img class="img-fluid d-block mb-5 mx-auto" src="assets/img/profile.png">
+        <div class="container"><img class="img-fluid d-block mb-5 mx-auto" id="first-photo" src="assets/img/violin-rounded-256x256.webp" width="512px">
             <h1 class="dancing-script-text">¡Bienvenidos a mis XV Años!</h1>
             <h2 class="pt-3 great-vibes-text">Andrea Castelán Carpinteyro</h2>
             <hr class="star-light">
@@ -39,58 +40,18 @@
     </header>
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="text-uppercase text-center text-secondary">Portfolio</h2>
-            <hr class="mb-5 star-dark">
+            <h2 class="text-uppercase text-center text-secondary">ESCANEAR PASE</h2>
+            <p class="fs-4 text-center dancing-script-text">Escanea el código QR del invitado para consultar sus pases y mesa.</p>
+            <hr class="mt-4 mb-5 star-dark">
+            <div class="row justify-content-center">
+                <div class="col-6 text-center"><img class="img-fluid w-100 h-auto" width="512" height="512" src="assets/img/qr-code-icon.png"></div>
+            </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
-                        <div class="position-absolute d-flex w-100 h-100 portfolio-item-caption">
-                            <div class="text-center text-white w-100 my-auto portfolio-item-caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/cabin.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
-                        <div class="position-absolute d-flex w-100 h-100 portfolio-item-caption">
-                            <div class="text-center text-white w-100 my-auto portfolio-item-caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/cake.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3" data-bs-toggle="modal">
-                        <div class="position-absolute d-flex w-100 h-100 portfolio-item-caption">
-                            <div class="text-center text-white w-100 my-auto portfolio-item-caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/circus.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-4" data-bs-toggle="modal">
-                        <div class="position-absolute d-flex w-100 h-100 portfolio-item-caption">
-                            <div class="text-center text-white w-100 my-auto portfolio-item-caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/game.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-5" data-bs-toggle="modal">
-                        <div class="position-absolute d-flex w-100 h-100 portfolio-item-caption">
-                            <div class="text-center text-white w-100 my-auto portfolio-item-caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/safe.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-6" data-bs-toggle="modal">
-                        <div class="position-absolute d-flex w-100 h-100 portfolio-item-caption">
-                            <div class="text-center text-white w-100 my-auto portfolio-item-caption-content"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/submarine.png">
-                    </a></div>
+                <div class="col text-center btn-xl"><button class="btn btn-primary standard-button" type="button">ABRIR ESCÁNER</button></div>
             </div>
         </div>
     </section>
-    <section class="text-white bg-primary mb-0" id="about">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-white">About</h2>
-            <hr class="mb-5 star-light">
-            <div class="row">
-                <div class="col-lg-4 ms-auto">
-                    <p class="lead">Freelancer is a free bootstrap theme. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-                </div>
-                <div class="col-lg-4 me-auto">
-                    <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-                </div>
-            </div>
-            <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Now!</span></a></div>
-        </div>
-    </section>
-    <section id="contact">
+    <section class="bg-primary" id="contact">
         <div class="container">
             <h2 class="text-uppercase text-center text-secondary mb-0">Contact Me</h2>
             <hr class="mb-5 star-dark">
@@ -114,6 +75,21 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="text-white bg-primary mb-0" id="about">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-white">About</h2>
+            <hr class="mb-5 star-light">
+            <div class="row">
+                <div class="col-lg-4 ms-auto">
+                    <p class="lead">Freelancer is a free bootstrap theme. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4 me-auto">
+                    <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+            </div>
+            <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Now!</span></a></div>
         </div>
     </section>
     <footer class="text-center footer">
