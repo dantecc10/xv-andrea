@@ -9,12 +9,15 @@ if (isset($_GET['qr_code'])) {
         SELECT 
             qr.id_qr_code,
             qr.link_qr_code,
-            qr.passes_qr_code,
+            qr.adults_qr_code,
+            qr.kids_qr_code,
             g.id_guest,
             g.family_guest,
             g.name_guest,
             g.last_names_guest,
-            g.assigned_to_table
+            g.assigned_to_table,
+            g.phone_number_guest,
+            g.status_guest
         FROM qr_codes qr
         JOIN guests g ON qr.assigned_to_guest = g.id_guest
         WHERE qr.id_qr_code = ?
@@ -25,9 +28,16 @@ if (isset($_GET['qr_code'])) {
 
     if ($result->num_rows > 0) {
         $data = $result->fetch_assoc();
+        $adultPasses = intval($data['adults_qr_code'] ?? 0);
+        $kidPasses = intval($data['kids_qr_code'] ?? 0);
+
         echo "Invitado encontrado: " . htmlspecialchars($data['name_guest']) . " " . htmlspecialchars($data['last_names_guest']);
         echo "<br>Familia: " . htmlspecialchars($data['family_guest']);
-        echo "<br>Pases disponibles: " . intval($data['passes_qr_code']);
+        echo "<br>Teléfono: " . htmlspecialchars($data['phone_number_guest'] ?? '');
+        echo "<br>Estado: " . htmlspecialchars($data['status_guest'] ?? '');
+        echo "<br>Adultos permitidos: " . $adultPasses;
+        echo "<br>Niños permitidos: " . $kidPasses;
+        echo "<br>Pases totales: " . ($adultPasses + $kidPasses);
         echo "<br>Mesa asignada: " . intval($data['assigned_to_table']);
         // Aquí puedes agregar más lógica, como registrar la asistencia
     } else {
