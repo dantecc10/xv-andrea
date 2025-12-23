@@ -1,4 +1,6 @@
 *.env
 vendor/*
-attendance/assets/img/ordered-qrs/*
-attendance/assets/img/qrs/*
+attendance/assets/img/ordered-qrs/*.png
+attendance/assets/img/ordered-qrs/*.svg
+attendance/assets/img/qrs/*.png
+attendance/assets/img/qrs/*.svg
