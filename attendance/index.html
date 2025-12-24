@@ -8,35 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/trd3iep.css">
 <script src="https://unpkg.com/html5-qrcode"></script>
-<script>
-//Inicializo la cámara y el lector de QR
-const result = document.getElementById("result");
-const qrCodeScanner = new Html5Qrcode("reader");
-const linkElement = document.getElementById("qr-link");
-
-function startScanner() {
-    qrCodeScanner.start({
-        facingMode: "environment"
-    }, // cámara trasera en móviles
-        {
-            fps: 10,
-            qrbox: 250
-        },
-        (decodedText) => {
-            result.innerHTML = "<a href=\"" + decodedText + "\">" + decodedText + "</a>";
-            linkElement.textContent = decodedText;
-
-            // Detiener el escáner después de una lectura exitosa
-            qrCodeScanner.stop();
-        },
-        (errorMessage) => {
-            // errores silenciosos de lectura
-        }
-    );
-    let camera_frame = document.querySelector("video");
-    camera_frame.setAttribute("style", "width: 150%; display: block;");
-}
-</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - XV Andrea</title>
     <meta name="description" content="Asistencia a los XV años de Andrea">
@@ -53,7 +24,7 @@ function startScanner() {
         <div class="container"><a class="navbar-brand" href="#page-top">XV Andrea</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link px-0 px-lg-3 py-3 rounded" href="#portfolio">Escanear pases</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link px-0 px-lg-3 py-3 rounded" href="#scan-pass">Escanear pases</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link px-0 px-lg-3 py-3 rounded" href="#contact">Contact</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link rounded px-0 px-lg-3 py-3" href="#about">Acerca de</a></li>
                 </ul>
@@ -67,16 +38,19 @@ function startScanner() {
             <hr class="star-light">
         </div>
     </header>
-    <section id="portfolio" class="portfolio">
+    <section id="scan-pass" class="portfolio">
         <div class="container">
             <h2 class="text-uppercase text-center text-secondary">ESCANEAR PASE</h2>
             <p class="fs-4 text-center text-secondary dancing-script-text">Escanea el código QR del invitado para consultar sus pases y mesa.</p>
             <hr class="mt-4 mb-5 star-dark">
             <div class="row justify-content-center">
-                <div class="col-6 text-center" id="reader"><img class="img-fluid w-100 h-auto" width="512" height="512" src="assets/img/qr-code-icon-purple.png"></div>
+                <div class="col-10 col-sm-8 text-center" id="reader"><img class="img-fluid w-100 h-auto" width="512" height="512" src="assets/img/qr-code-icon-purple.png"></div>
             </div>
             <div class="row">
                 <div class="col text-center btn-xl"><button class="btn standard-button text-secondary" type="button" onclick="javascript:startScanner();">ABRIR ESCÁNER</button></div>
+            </div>
+            <div class="row">
+                <div class="col text-center text-success"><a class="bg-success text-white btn" href="#scan-pass">VER PASE</a></div>
             </div>
         </div>
     </section>
@@ -264,6 +238,7 @@ function startScanner() {
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/freelancer.js"></script>
+    <script src="assets/js/qr-camera.js"></script>
 </body>
 
 </html>

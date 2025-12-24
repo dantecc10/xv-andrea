@@ -12,7 +12,7 @@ function startScanner() {
             qrbox: 250
         },
         (decodedText) => {
-            result.innerHTML = "<a class='bg-success text-white btn' href='" + decodedText + "'>" + VER PASE + "</a>";
+            result.innerHTML = "<a href=\"" + decodedText + "\">" + decodedText + "</a>";
             linkElement.textContent = decodedText;
 
             // Detiener el escáner después de una lectura exitosa
@@ -22,4 +22,6 @@ function startScanner() {
             // errores silenciosos de lectura
         }
     );
+    let camera_frame = document.querySelector("video");
+    camera_frame.setAttribute("style", "width: 150%; display: block;");
 }

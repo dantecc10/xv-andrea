@@ -52,7 +52,7 @@ header.masthead h2, header.masthead .h2 {
   font-size: 2.8em;
 }
 
-section#portfolio, section#about {
+section#scan-pass, section#about {
   background-color: #d36c83 !important;
 }
 
@@ -97,5 +97,16 @@ nav#mainNav {
 .standard-button.text-secondary:hover {
   color: #c17b2f !important;
   background-color: #650056 !important;
+}
+
+#reader video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.btn.bg-success {
+  border: 2px solid #f098ab !important;
+  font-weight: bolder;
+  font-family: 'Montserrat';
 }
 
