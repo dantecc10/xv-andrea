@@ -54,55 +54,59 @@ function fillGuestModal(data, modalId = 'guestModal') {
             return;
         }
 
-        // Mapear datos a los elementos del modal
-        // FAMILIA
-        const familyElement = modal.querySelector('.row:nth-child(1) .col');
-        if (familyElement) {
-            familyElement.innerHTML = `
-                <h4 class="fs-2 mb-0">${guestData.family_guest || 'N/A'}</h4>
-                <hr class="my-0 col-4" style="border-width: thin;color: red;">
-                <h5>${guestData.name_guest} ${guestData.last_names_guest}</h5>
-            `;
+        // Obtener el contenedor principal (col-lg-8)
+        const container = modal.querySelector('.col-lg-8.mx-auto');
+        if (!container) {
+            console.error('Contenedor .col-lg-8.mx-auto no encontrado en el modal');
+            return;
         }
 
-        // MESA
-        const tableElement = modal.querySelector('.row:nth-child(2) .col');
-        if (tableElement) {
-            tableElement.innerHTML = `
-                <h4 class="fs-1 mb-0">MESA</h4>
-                <hr class="my-0 col-4" style="border-width: thin;color: red;">
-                <h5 class="fs-1">${guestData.assigned_to_table || 'N/A'}</h5>
-            `;
+        // Obtener todos los rows que son hijos directos del contenedor
+        const rows = container.querySelectorAll(':scope > .row');
+
+        console.log('Rows encontrados:', rows.length);
+
+        if (rows.length < 5) {
+            console.warn('Se esperaban al menos 5 rows, se encontraron: ' + rows.length);
         }
 
-        // ADULTOS Y NIÑOS
-        const passesRow = modal.querySelector('.row:nth-child(3)');
-        if (passesRow) {
-            const cols = passesRow.querySelectorAll('.col');
+        // Row 0: FAMILIA (h5 con la familia)
+        if (rows[0]) {
+            const h5 = rows[0].querySelector('h5');
+            if (h5) h5.textContent = guestData.family_guest || 'N/A';
+        }
+
+        // Row 1: NOMBRE Y APELLIDOS (h4 con nombre, h5 con apellidos)
+        if (rows[1]) {
+            const h4 = rows[1].querySelector('h4');
+            const h5 = rows[1].querySelector('h5');
+            if (h4) h4.textContent = guestData.name_guest || 'N/A';
+            if (h5) h5.textContent = guestData.last_names_guest || 'N/A';
+        }
+
+        // Row 2: MESA (h5 con número de mesa)
+        if (rows[2]) {
+            const h5 = rows[2].querySelector('h5');
+            if (h5) h5.textContent = guestData.assigned_to_table || 'N/A';
+        }
+
+        // Row 3: ADULTOS Y NIÑOS (dos columnas con h5)
+        if (rows[3]) {
+            const cols = rows[3].querySelectorAll('.col');
             if (cols[0]) {
-                cols[0].innerHTML = `
-                    <h4 class="fs-4 mb-0">ADULTOS</h4>
-                    <hr class="my-0 col-8" style="border-width: thin;color: red;">
-                    <h5 class="fs-2">${guestData.adults_qr_code || 0}</h5>
-                `;
+                const h5 = cols[0].querySelector('h5');
+                if (h5) h5.textContent = guestData.adults_qr_code || 0;
             }
             if (cols[1]) {
-                cols[1].innerHTML = `
-                    <h4 class="fs-4 mb-0">NIÑOS</h4>
-                    <hr class="my-0 col-8" style="border-width: thin;color: red;">
-                    <h5 class="fs-2">${guestData.kids_qr_code || 0}</h5>
-                `;
+                const h5 = cols[1].querySelector('h5');
+                if (h5) h5.textContent = guestData.kids_qr_code || 0;
             }
         }
 
-        // PASES TOTALES
-        const totalPassesElement = modal.querySelector('.row:nth-child(4) .col');
-        if (totalPassesElement) {
-            totalPassesElement.innerHTML = `
-                <h4 class="fs-4 mb-0">PASES</h4>
-                <hr class="my-0 col-6" style="border-width: thin;color: red;">
-                <h5 class="fs-1">${guestData.total_passes || 0}</h5>
-            `;
+        // Row 4: PASES TOTALES (h5 con total)
+        if (rows[4]) {
+            const h5 = rows[4].querySelector('h5');
+            if (h5) h5.textContent = guestData.total_passes || 0;
         }
 
         // Mostrar el modal
