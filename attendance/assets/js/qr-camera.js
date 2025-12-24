@@ -12,7 +12,7 @@ function startScanner() {
             qrbox: 250
         },
         (decodedText) => {
-            result.innerHTML = "<a class='bg-success text-white btn' href='" + decodedText + "'>" + VER PASE + "</a>";
+            result.innerHTML = "<a class='bg-success text-white btn' href='" + decodedText + "'>VER PASE</a>";
             linkElement.textContent = decodedText;
 
             // Detiener el escáner después de una lectura exitosa
