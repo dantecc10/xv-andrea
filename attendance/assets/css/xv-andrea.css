@@ -1,5 +1,5 @@
 .bg-secondary {
-  background-color: #d36c83 !important;
+  background-color: #cb8897 !important;
 }
 
 .bg-primary {
@@ -26,7 +26,7 @@ nav a.nav-link {
 }
 
 h1.dancing-script-text {
-  color: #c17b2f !important;
+  color: #bb8245 !important;
   /*text-shadow: 1px 1px 2px white !important;*/
   text-shadow: 2px 1px 34px rgba(252,181,75,0.91) !important;
 }
@@ -53,7 +53,11 @@ header.masthead h2, header.masthead .h2 {
 }
 
 section#scan-pass, section#about {
-  background-color: #d36c83 !important;
+  background-color: #efa8b7 !important;
+}
+
+.bg-third {
+  background-color: red !important;
 }
 
 nav#mainNav {
@@ -122,6 +126,10 @@ nav#mainNav {
   color: #650056 !important;
 }
 
+.purple {
+  color: #650056;
+}
+
 .modal-body h5 {
   font-family: 'Lato';
 }
@@ -129,5 +137,29 @@ nav#mainNav {
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
   background-color: #f098ab !important;
   color: #c17b2f !important;
+}
+
+.cardo-regular {
+  font-family: "Cardo", serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cardo-bold {
+  font-family: "Cardo", serif !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cardo-regular-italic {
+  font-family: "Cardo", serif !important;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.parisienne-regular {
+  font-family: "Parisienne", cursive !important;
+  font-weight: 400;
+  font-style: normal;
 }
 
