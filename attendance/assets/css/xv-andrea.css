@@ -110,3 +110,7 @@ nav#mainNav {
   font-family: 'Montserrat';
 }
 
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+  color: white !important;
+}
+
