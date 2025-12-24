@@ -31,20 +31,61 @@ if (isset($_GET['qr_code'])) {
         $adultPasses = intval($data['adults_qr_code'] ?? 0);
         $kidPasses = intval($data['kids_qr_code'] ?? 0);
 
-        echo "Invitado encontrado: " . htmlspecialchars($data['name_guest']) . " " . htmlspecialchars($data['last_names_guest']);
-        echo "<br>Familia: " . htmlspecialchars($data['family_guest']);
-        echo "<br>Teléfono: " . htmlspecialchars($data['phone_number_guest'] ?? '');
-        echo "<br>Estado: " . htmlspecialchars($data['status_guest'] ?? '');
-        echo "<br>Adultos permitidos: " . $adultPasses;
-        echo "<br>Niños permitidos: " . $kidPasses;
-        echo "<br>Pases totales: " . ($adultPasses + $kidPasses);
-        echo "<br>Mesa asignada: " . intval($data['assigned_to_table']);
+        // Verificar si se está usando AJAX
+        if (isset($_GET['ajax'])) {
+            // Devolver respuesta en formato JSON
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'data' => [
+                    'id_qr_code' => $data['id_qr_code'],
+                    'link_qr_code' => $data['link_qr_code'],
+                    'name_guest' => $data['name_guest'],
+                    'last_names_guest' => $data['last_names_guest'],
+                    'family_guest' => $data['family_guest'],
+                    'phone_number_guest' => $data['phone_number_guest'] ?? '',
+                    'status_guest' => $data['status_guest'] ?? '',
+                    'adults_qr_code' => $adultPasses,
+                    'kids_qr_code' => $kidPasses,
+                    'total_passes' => $adultPasses + $kidPasses,
+                    'assigned_to_table' => intval($data['assigned_to_table'])
+                ]
+            ]);
+        } else {
+            // Respuesta HTML tradicional
+            echo "Invitado encontrado: " . htmlspecialchars($data['name_guest']) . " " . htmlspecialchars($data['last_names_guest']);
+            echo "<br>Familia: " . htmlspecialchars($data['family_guest']);
+            echo "<br>Teléfono: " . htmlspecialchars($data['phone_number_guest'] ?? '');
+            echo "<br>Estado: " . htmlspecialchars($data['status_guest'] ?? '');
+            echo "<br>Adultos permitidos: " . $adultPasses;
+            echo "<br>Niños permitidos: " . $kidPasses;
+            echo "<br>Pases totales: " . ($adultPasses + $kidPasses);
+            echo "<br>Mesa asignada: " . intval($data['assigned_to_table']);
+        }
         // Aquí puedes agregar más lógica, como registrar la asistencia
     } else {
-        echo "Invitado no encontrado.";
+        // Verificar si se está usando AJAX para el error
+        if (isset($_GET['ajax'])) {
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => 'Invitado no encontrado.'
+            ]);
+        } else {
+            echo "Invitado no encontrado.";
+        }
     }
 
     $stmt->close();
 } else {
-    echo "No se proporcionó ningún código QR.";
+    // Verificar si se está usando AJAX para el error
+    if (isset($_GET['ajax'])) {
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => false,
+            'message' => 'No se proporcionó ningún código QR.'
+        ]);
+    } else {
+        echo "No se proporcionó ningún código QR.";
+    }
 }
