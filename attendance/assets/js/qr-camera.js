@@ -8,7 +8,7 @@ function startScanner() {
         facingMode: "environment"
     }, // cámara trasera en móviles
         {
-            fps : 10,
+            fps: 10,
             qrbox: 250
         },
         (decodedText) => {
@@ -22,4 +22,6 @@ function startScanner() {
             // errores silenciosos de lectura
         }
     );
+    let camera_frame = document.querySelector("video");
+    camera_frame.setAttribute("style", "width: 150%; display: block;");
 }

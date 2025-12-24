@@ -31,7 +31,7 @@ h1.dancing-script-text {
   text-shadow: 2px 1px 34px rgba(252,181,75,0.91) !important;
 }
 
-hr.star-light:after {
+hr.star-light:after, hr.star-dark:after {
   border-radius: 20px !important;
   background-color: #c17b2f;
 }
@@ -60,7 +60,7 @@ nav#mainNav {
   border-bottom: 5px solid #c17b2f;
 }
 
-.star-light {
+.star-light, .star-dark {
   border-color: #c17b2f !important;
 }
 
@@ -85,7 +85,17 @@ nav#mainNav {
 }
 
 #first-photo {
-  box-shadow: 2px 2px 35px #c17b2f !important;
-  /*border-radius: 130px;*/
+  /*padding: 0px !important;*/
+  background-color: #f098ab !important;
+  box-shadow: 0px 0px 10px 5px rgba(193,123,47,0.5) !important;
+}
+
+.text-secondary {
+  color: #650056ff !important;
+}
+
+.standard-button.text-secondary:hover {
+  color: #c17b2f !important;
+  background-color: #650056 !important;
 }
 

@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/trd3iep.css">
 <script src="https://unpkg.com/html5-qrcode"></script>
+<script src="assets/js/qr-camera.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - XV Andrea</title>
     <meta name="description" content="Asistencia a los XV años de Andrea">
@@ -31,8 +32,8 @@
             </div>
         </div>
     </nav>
-    <header class="text-center text-white bg-primary mt-5 pt-5 masthead">
-        <div class="container"><img class="rounded-circle img-fluid d-block mb-5 mx-auto" id="first-photo" src="assets/img/violin-rounded-256x256.webp" width="512px">
+    <header class="text-center text-white bg-primary masthead">
+        <div class="container"><img class="rounded-circle img-fluid d-block mb-5 mx-auto" id="first-photo" src="assets/img/rotated-quinceañera-rounded-512x512.png" width="512px">
             <h1 class="dancing-script-text">¡Bienvenidos a mis XV Años!</h1>
             <h2 class="pt-3 great-vibes-text">Andrea Castelán Carpinteyro</h2>
             <hr class="star-light">
@@ -41,13 +42,13 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="text-uppercase text-center text-secondary">ESCANEAR PASE</h2>
-            <p class="fs-4 text-center dancing-script-text">Escanea el código QR del invitado para consultar sus pases y mesa.</p>
+            <p class="fs-4 text-center text-secondary dancing-script-text">Escanea el código QR del invitado para consultar sus pases y mesa.</p>
             <hr class="mt-4 mb-5 star-dark">
             <div class="row justify-content-center">
-                <div class="col-6 text-center"><img class="img-fluid w-100 h-auto" width="512" height="512" src="assets/img/qr-code-icon.png"></div>
+                <div class="col-6 text-center" id="reader"><img class="img-fluid w-100 h-auto" width="512" height="512" src="assets/img/qr-code-icon-purple.png"></div>
             </div>
             <div class="row">
-                <div class="col text-center btn-xl"><button class="btn btn-primary standard-button" type="button">ABRIR ESCÁNER</button></div>
+                <div class="col text-center btn-xl"><button class="btn standard-button text-secondary" type="button" onclick="javascript:startScanner();">ABRIR ESCÁNER</button></div>
             </div>
         </div>
     </section>
