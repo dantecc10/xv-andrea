@@ -4,7 +4,7 @@
  * @param {string} url - URL del endpoint (por defecto: guest-copy.php)
  * @returns {Promise<Object>} - Datos del invitado en formato JSON
  */
-async function fetchGuestData(qrCode, url = 'guest.php') {
+async function fetchGuestData(qrCode, url = 'https://xv-andrea.castelancarpinteyro.com/attendance/guest.php') {
     try {
         // Construir la URL con los parámetros
         const fetchUrl = `${url}?qr_code=${encodeURIComponent(qrCode)}&ajax=1`;
