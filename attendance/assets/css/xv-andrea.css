@@ -126,3 +126,8 @@ nav#mainNav {
   font-family: 'Lato';
 }
 
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  background-color: #f098ab !important;
+  color: #c17b2f !important;
+}
+

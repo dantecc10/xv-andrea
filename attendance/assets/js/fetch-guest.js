@@ -54,56 +54,68 @@ function fillGuestModal(data, modalId = 'guestModal') {
             return;
         }
 
-        // Mapear datos a los elementos del modal
-        // FAMILIA
-        const familyElement = modal.querySelector('.row:nth-child(1) .col');
-        if (familyElement) {
-            familyElement.innerHTML = `
-                <h4 class="fs-2 mb-0">${guestData.family_guest || 'N/A'}</h4>
-                <hr class="my-0 col-4" style="border-width: thin;color: red;">
-                <h5>${guestData.name_guest} ${guestData.last_names_guest}</h5>
-            `;
+        // Obtener el modal-body
+        const modalBody = modal.querySelector('.modal-body');
+        if (!modalBody) {
+            console.error('Modal body no encontrado');
+            return;
         }
 
-        // MESA
-        const tableElement = modal.querySelector('.row:nth-child(2) .col');
-        if (tableElement) {
-            tableElement.innerHTML = `
-                <h4 class="fs-1 mb-0">MESA</h4>
-                <hr class="my-0 col-4" style="border-width: thin;color: red;">
-                <h5 class="fs-1">${guestData.assigned_to_table || 'N/A'}</h5>
-            `;
-        }
+        // Construir el HTML completo del contenido del modal
+        const modalContent = `
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-uppercase text-success mb-0">¡PASE ENCONTRADO!</h2>
+                        <hr class="mt-4 mb-1 star-dark">
+                        
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="fs-2 mb-0">FAMILIA</h4>
+                                <hr class="my-0 col-4" style="border-width: thin;color: red;">
+                                <h5>${guestData.family_guest || 'N/A'}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="fs-2 mb-0">${guestData.name_guest || 'N/A'}</h4>
+                                <hr class="my-0 col-4" style="border-width: thin;color: red;">
+                                <h5>${guestData.last_names_guest || 'N/A'}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="fs-1 mb-0">MESA</h4>
+                                <hr class="my-0 col-4" style="border-width: thin;color: red;">
+                                <h5 class="fs-1">${guestData.assigned_to_table || 'N/A'}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="fs-4 mb-0">ADULTOS</h4>
+                                <hr class="my-0 col-8" style="border-width: thin;color: red;">
+                                <h5 class="fs-2">${guestData.adults_qr_code || 0}</h5>
+                            </div>
+                            <div class="col">
+                                <h4 class="fs-4 mb-0">NIÑOS</h4>
+                                <hr class="my-0 col-8" style="border-width: thin;color: red;">
+                                <h5 class="fs-2">${guestData.kids_qr_code || 0}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="fs-4 mb-0">PASES</h4>
+                                <hr class="my-0 col-6" style="border-width: thin;color: red;">
+                                <h5 class="fs-1">${guestData.total_passes || 0}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
 
-        // ADULTOS Y NIÑOS
-        const passesRow = modal.querySelector('.row:nth-child(3)');
-        if (passesRow) {
-            const cols = passesRow.querySelectorAll('.col');
-            if (cols[0]) {
-                cols[0].innerHTML = `
-                    <h4 class="fs-4 mb-0">ADULTOS</h4>
-                    <hr class="my-0 col-8" style="border-width: thin;color: red;">
-                    <h5 class="fs-2">${guestData.adults_qr_code || 0}</h5>
-                `;
-            }
-            if (cols[1]) {
-                cols[1].innerHTML = `
-                    <h4 class="fs-4 mb-0">NIÑOS</h4>
-                    <hr class="my-0 col-8" style="border-width: thin;color: red;">
-                    <h5 class="fs-2">${guestData.kids_qr_code || 0}</h5>
-                `;
-            }
-        }
-
-        // PASES TOTALES
-        const totalPassesElement = modal.querySelector('.row:nth-child(4) .col');
-        if (totalPassesElement) {
-            totalPassesElement.innerHTML = `
-                <h4 class="fs-4 mb-0">PASES</h4>
-                <hr class="my-0 col-6" style="border-width: thin;color: red;">
-                <h5 class="fs-1">${guestData.total_passes || 0}</h5>
-            `;
-        }
+        // Reemplazar el contenido del modal-body
+        modalBody.innerHTML = modalContent;
 
         // Mostrar el modal
         const bootstrapModal = new bootstrap.Modal(modal);
