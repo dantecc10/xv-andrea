@@ -15,8 +15,7 @@ function startScanner() {
             // Si el texto decodificado es un enlace y empieza con "https://xv-andrea.castelancarpinteyro.com" 
             if (decodedText.startsWith("https://xv-andrea.castelancarpinteyro.com")) {
                 document.getElementById("qr-link").innerHTML =
-                    `<a class="bg-success text-white btn" onclick="javascript:fetchAndFillGuestFromUrl('${decodedText}', 'portfolio-modal-1');">VER PASE</a>`;
-                    //`<a class="bg-success text-white btn" href="${decodedText}">VER PASE</a>`;
+                    `<a class="bg-success text-white btn" href="${decodedText}">VER PASE</a>`;
             } else {
                 document.getElementById("qr-link").innerHTML =
                     `<span class="btn bg-danger text-white">QR no válido</span>`;
