@@ -114,3 +114,15 @@ nav#mainNav {
   color: white !important;
 }
 
+.modal-body {
+  background-color: #f098ab !important;
+}
+
+.modal-body h4 {
+  color: #650056 !important;
+}
+
+.modal-body h5 {
+  font-family: 'Lato';
+}
+
