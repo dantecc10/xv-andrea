@@ -8,7 +8,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/trd3iep.css">
 <script src="https://unpkg.com/html5-qrcode"></script>
-<script src="assets/js/qr-camera.js"></script>
+<script>
+//Inicializo la cámara y el lector de QR
+const result = document.getElementById("result");
+const qrCodeScanner = new Html5Qrcode("reader");
+const linkElement = document.getElementById("qr-link");
+
+function startScanner() {
+    qrCodeScanner.start({
+        facingMode: "environment"
+    }, // cámara trasera en móviles
+        {
+            fps: 10,
+            qrbox: 250
+        },
+        (decodedText) => {
+            result.innerHTML = "<a href=\"" + decodedText + "\">" + decodedText + "</a>";
+            linkElement.textContent = decodedText;
+
+            // Detiener el escáner después de una lectura exitosa
+            qrCodeScanner.stop();
+        },
+        (errorMessage) => {
+            // errores silenciosos de lectura
+        }
+    );
+    let camera_frame = document.querySelector("video");
+    camera_frame.setAttribute("style", "width: 150%; display: block;");
+}
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - XV Andrea</title>
     <meta name="description" content="Asistencia a los XV años de Andrea">
