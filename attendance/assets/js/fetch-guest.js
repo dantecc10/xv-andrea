@@ -145,6 +145,35 @@ async function fetchAndFillGuest(qrCode, url = 'https://xv-andrea.castelancarpin
 }
 
 /**
+ * Función para obtener datos y llenar modal directamente desde una URL completa
+ * @param {string} fullUrl - URL completa con parámetros (ej: guest-copy.php?qr_code=XXX)
+ * @param {string} modalId - ID del modal a llenar
+ */
+async function fetchAndFillGuestFromUrl(fullUrl, modalId = 'guestModal') {
+    try {
+        // Agregar &ajax=1 si no está en la URL
+        let url = fullUrl;
+        if (!url.includes('ajax=')) {
+            url += (url.includes('?') ? '&' : '?') + 'ajax=1';
+        }
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Datos del invitado:', data);
+        fillGuestModal(data, modalId);
+
+    } catch (error) {
+        console.error('Error en fetchAndFillGuestFromUrl:', error);
+        alert('Error al obtener datos del invitado');
+    }
+}
+
+/**
  * Ejemplo de uso de las funciones
  * Descomentar para probar:
  */
