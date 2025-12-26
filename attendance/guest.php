@@ -58,6 +58,7 @@ if (isset($_GET['qr_code'])) {
             exit();
             
             // Respuesta HTML tradicional
+            /*
             echo "Invitado encontrado: " . htmlspecialchars($data['name_guest']) . " " . htmlspecialchars($data['last_names_guest']);
             echo "<br>Familia: " . htmlspecialchars($data['family_guest']);
             echo "<br>Teléfono: " . htmlspecialchars($data['phone_number_guest'] ?? '');
@@ -66,6 +67,7 @@ if (isset($_GET['qr_code'])) {
             echo "<br>Niños permitidos: " . $kidPasses;
             echo "<br>Pases totales: " . ($adultPasses + $kidPasses);
             echo "<br>Mesa asignada: " . intval($data['assigned_to_table']);
+            */
         }
         // Aquí puedes agregar más lógica, como registrar la asistencia
     } else {
