@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - XV Andrea</title>
+    <meta name="description" content="Asistencia a los XV años de Andrea">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Dancing+Script:wght@400..700&amp;family=Parisienne&amp;display=swap">
+    <link rel="stylesheet" href="https://use.typekit.net/trd3iep.css">
+    <link rel="stylesheet" href="assets/css/xv-andrea.css">
+    
+    <?php // Si alguien escaneó directamente el QR, crear variable JS con el URL de redirección
+    $redirectUrl = "";
+    if (isset($_GET['redirect'])) {
+        $redirectUrl = (string) $_GET['redirect'];
+    }
+
+    echo "<script>const redirectUrl = '" . $redirectUrl . "';</script>";
+    ?>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand cardo-bold" href="#page-top">XV Andrea</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-center rounded px-0 px-lg-3 py-3 cardo-bold" href="#scan-pass">Escanear pases</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-center rounded px-0 px-lg-3 py-3 cardo-bold" href="#contact">Contact</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-center rounded px-0 px-lg-3 py-3 cardo-bold" href="#about">Acerca de</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="text-center text-white bg-secondary masthead">
+        <div class="container"><img class="rounded-circle img-fluid d-block mb-5 mx-auto" id="first-photo" src="assets/img/xv-rounded-512x512.webp" width="512px">
+            <h1 class="dancing-script-text">¡Bienvenidos a mis XV Años!</h1>
+            <h2 class="pt-3 great-vibes-text parisienne-regular">Andrea Castelán Carpinteyro</h2>
+            <hr class="star-light">
+            <div class="row">
+                <div class="col">
+                    <p>Paragraph</p>
+                </div>
+                <div class="col">
+                    <p>Paragraph</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="scan-pass" class="portfolio bg-third">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary">ESCANEAR PASE</h2>
+            <p class="fs-4 text-center text-secondary dancing-script-text">Escanea el código QR del invitado para consultar sus pases y mesa.</p>
+            <hr class="mt-4 mb-0 star-dark">
+            <div class="row justify-content-center">
+                <div class="col-10 col-sm-8 col-md-5 col-lg-3 text-center" id="reader"><img class="img-fluid w-100 h-auto" width="512" height="512" src="assets/img/qr-code-icon-purple.png"></div>
+            </div>
+            <div class="row">
+                <div class="col text-center btn-xl"><button class="btn standard-button text-secondary" type="button" onclick="javascript:startScanner();">ABRIR ESCÁNER</button></div>
+            </div>
+            <div class="row">
+                <div class="col text-center text-success"><span id="qr-link"></span></div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-primary" id="contact">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary mb-0">¡CARGA TUS RECUERDOS!</h2>
+            <hr class="mb-5 star-dark">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" name="sentMessage">
+                        <div>
+                            <div class="mb-0 pb-2 form-floating"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div>
+                            <div class="mb-0 pb-2 form-floating"><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div>
+                            <div class="mb-0 pb-2 form-floating"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div>
+                            <div class="mb-5 pb-2 form-floating"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div id="success"></div>
+                        <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-white bg-primary mb-0" id="about">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-white">About</h2>
+            <hr class="mb-5 star-light">
+            <div class="row">
+                <div class="col-lg-4 ms-auto">
+                    <p class="lead">Freelancer is a free bootstrap theme. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4 me-auto">
+                    <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+            </div>
+            <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Now!</span></a></div>
+        </div>
+    </section>
+    <footer class="text-center bg-primary footer">
+        <div class="container">
+            <div class="row">
+                <div class="mb-5">
+                    <h4 class="fs-1 mb-2 parisienne-regular purple">Ubicación</h4>
+                    <p class="fs-4 mb-0 cardo-bold"><strong>Salón "Cortijo"</strong></p>
+                    <p class="fs-4 mb-0 cardo-regular">Calle Porfirio Díaz S/N, 12 Norte, Colonia Lindavista</p>
+                    <p class="fs-4 fw-bolder cardo-regular">Cuautilulco, Zacatlán, Puebla.</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle" role="button" id="map-container" href="https://maps.app.goo.gl/daK7c8DAfbyRidR78"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-brand-google-maps fa-fw" id="map-icon">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M12 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"></path>
+                                    <path d="M6.428 12.494l7.314 -9.252"></path>
+                                    <path d="M10.002 7.935l-2.937 -2.545"></path>
+                                    <path d="M17.693 6.593l-8.336 9.979"></path>
+                                    <path d="M17.591 6.376c.472 .907 .715 1.914 .709 2.935a7.263 7.263 0 0 1 -.72 3.18a19.085 19.085 0 0 1 -2.089 3c-.784 .933 -1.49 1.93 -2.11 2.98c-.314 .62 -.568 1.27 -.757 1.938c-.121 .36 -.277 .591 -.622 .591c-.315 0 -.463 -.136 -.626 -.593a10.595 10.595 0 0 0 -.779 -1.978a18.18 18.18 0 0 0 -1.423 -2.091c-.877 -1.184 -2.179 -2.535 -2.853 -4.071a7.077 7.077 0 0 1 -.621 -2.967a6.226 6.226 0 0 1 1.476 -4.055a6.25 6.25 0 0 1 4.811 -2.245a6.462 6.462 0 0 1 1.918 .284a6.255 6.255 0 0 1 3.686 3.092z"></path>
+                                </svg></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 visually-hidden">
+                    <h4 class="mt-4 mb-2 dancing-script-text purple">Acerca de XV Andrea</h4>
+                    <p class="lead mb-0"><span>Esta página fue diseñada, desarrollada y alojada por Dante Castelán Carpinteyro para los "XV Años" de Andrea Castelán Carpinteyro,&nbsp;</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="text-center text-white bg-secondary py-4 copyright">
+        <div class="container"><small>Copyright ©&nbsp;Dante Castelán Carpinteyro 2025</small></div>
+    </div>
+    <div class="position-fixed d-lg-none scroll-to-top rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-success mb-0">¡PASE ENCONTRADO!</h2>
+                                <hr class="mt-4 mb-1 star-dark">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>FAMILIA</h4>
+                                        <h5>LOS PADRINOS</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg fw-bolder rounded-pill mx-auto" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;CERRAR</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="mb-5 star-dark"><img class="img-fluid mb-5" src="assets/img/portfolio/cake.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="mb-5 star-dark"><img class="img-fluid mb-5" src="assets/img/portfolio/circus.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="mb-5 star-dark"><img class="img-fluid mb-5" src="assets/img/portfolio/game.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="mb-5 star-dark"><img class="img-fluid mb-5" src="assets/img/portfolio/safe.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="mb-5 star-dark"><img class="img-fluid mb-5" src="assets/img/portfolio/submarine.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/fetch-guest.js"></script>
+    <script src="assets/js/freelancer.js"></script>
+    <script src="assets/js/qr-camera.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="assets/js/non-ajax.js"></script>
+</body>
+
+</html>

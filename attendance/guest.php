@@ -52,6 +52,11 @@ if (isset($_GET['qr_code'])) {
                 ]
             ]);
         } else {
+            // Redirigir a index.php con parámetro $_GET['redirect'] con el link del pase
+            $redirectLink = $data['link_qr_code'];
+            header("Location: index.php?redirect=" . urlencode($redirectLink));
+            exit();
+            
             // Respuesta HTML tradicional
             echo "Invitado encontrado: " . htmlspecialchars($data['name_guest']) . " " . htmlspecialchars($data['last_names_guest']);
             echo "<br>Familia: " . htmlspecialchars($data['family_guest']);
