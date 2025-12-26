@@ -46,6 +46,7 @@
             <h1 class="dancing-script-text">¡Bienvenidos a mis XV Años!</h1>
             <h2 class="pt-3 great-vibes-text parisienne-regular">Andrea Castelán Carpinteyro</h2>
             <hr class="star-light">
+            <!--
             <div class="row">
                 <div class="col">
                     <p>Paragraph</p>
@@ -54,6 +55,7 @@
                     <p>Paragraph</p>
                 </div>
             </div>
+            -->
         </div>
     </header>
     <section id="scan-pass" class="portfolio bg-third">
