@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - XV Andrea</title>
     <meta name="description" content="Asistencia a los XV años de Andrea">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Dancing+Script:wght@400..700&amp;family=Parisienne&amp;display=swap">
     <link rel="stylesheet" href="https://use.typekit.net/trd3iep.css">
     <link rel="stylesheet" href="assets/css/xv-andrea.css">
-    
+
     <?php // Si alguien escaneó directamente el QR, crear variable JS con el URL de redirección
     $redirectUrl = "";
     if (isset($_GET['redirect'])) {
@@ -33,8 +33,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-center rounded px-0 px-lg-3 py-3 cardo-bold" href="#scan-pass">Escanear pases</a></li>
+                    <!--
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-center rounded px-0 px-lg-3 py-3 cardo-bold" href="#contact">Contact</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-center rounded px-0 px-lg-3 py-3 cardo-bold" href="#about">Acerca de</a></li>
+                    -->
                 </ul>
             </div>
         </div>
@@ -70,6 +72,7 @@
             </div>
         </div>
     </section>
+    <!--
     <section class="bg-primary" id="contact">
         <div class="container">
             <h2 class="text-uppercase text-center text-secondary mb-0">¡CARGA TUS RECUERDOS!</h2>
@@ -111,6 +114,7 @@
             <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Now!</span></a></div>
         </div>
     </section>
+    -->
     <footer class="text-center bg-primary footer">
         <div class="container">
             <div class="row">
@@ -165,6 +169,7 @@
             </div>
         </div>
     </div>
+    <!--
     <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -260,6 +265,7 @@
             </div>
         </div>
     </div>
+    -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/fetch-guest.js"></script>
     <script src="assets/js/freelancer.js"></script>
